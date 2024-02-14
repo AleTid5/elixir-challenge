@@ -7,7 +7,13 @@ export const transformDataIntoUsers = (data: UserResponse): UserType[] =>
     email: user.email,
     image: user.picture.large,
     country: user.location.country,
+    fullLocation: `${user.location.street.name}, ${user.location.city}, ${user.location.state}`,
+    coordinates: [
+      user.location.coordinates.latitude,
+      user.location.coordinates.longitude,
+    ],
     age: user.dob.age,
     phoneNumber: user.phone,
     gender: user.gender,
+    registerDate: user.registered.date,
   }));

@@ -6,6 +6,9 @@ type UserType = {
   age: number;
   phoneNumber: string;
   gender: string;
+  registerDate: string;
+  fullLocation: string;
+  coordinates: [string, string];
 };
 
 export default UserType;

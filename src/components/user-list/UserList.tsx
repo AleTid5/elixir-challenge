@@ -30,7 +30,13 @@ const UserList = ({ users }: UserListProps) => {
           />
         ))}
       </SimpleGrid>
-      <Modal opened={opened} onClose={close} title="User details" centered>
+      <Modal
+        opened={opened}
+        onClose={close}
+        title="User details"
+        centered
+        radius="md"
+      >
         {user && <UserDetails {...user} />}
       </Modal>
     </>

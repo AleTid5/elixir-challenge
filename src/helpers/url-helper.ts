@@ -7,3 +7,6 @@ export const urlBuilder = (baseUrl: string, params: Record<string, string>) => {
 
   return url.toString();
 };
+
+export const getGoogleMapsUrl = (coordinates: [string, string]) =>
+  `https://www.google.com/maps/search/?api=1&query=${coordinates.join(",")}`;
