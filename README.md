@@ -1,30 +1,39 @@
-# React + TypeScript + Vite
+# Elixir Frontend Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Simple application to display random users and let the user filter them by name and nationality.
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/-React-444?logo=react&style=for-the-badge)
+![Typescript](https://img.shields.io/badge/-Typescript-2c3b5a?logo=typescript&style=for-the-badge)
+![Mantine](https://img.shields.io/badge/-Mantine-f8f9fa?logo=mantine&style=for-the-badge)
+![Vite](https://img.shields.io/badge/-Vite-32363f?logo=vite&style=for-the-badge)
+![Recoil](https://img.shields.io/badge/-Recoil-292d3e?logo=recoil&style=for-the-badge)
+![React Query](https://img.shields.io/badge/-React%20Query-ffe100?logo=react-query&style=for-the-badge)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Project Setup
+```sh
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Type-Check, Compile and Minify for Production
+
+```sh
+npm run build
+```
+
+### Vite Preview for Production (requires build)
+
+```sh
+npm run preview
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
+```
