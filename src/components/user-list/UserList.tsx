@@ -1,26 +1,18 @@
 import { SimpleGrid } from "@mantine/core";
-import { useUsers } from "@/api/users";
-import { filteredUsersState } from "@/stores/filters-store";
-import ErrorCard from "./components/error-card";
-import SkeletonList from "./components/skeleton-list";
+import type UserType from "@/types/user-type.ts";
 import UserCard from "./components/user-card";
-import { useRecoilValue } from "recoil";
+import withEnhancers from "./wrappers/with-enhancers";
 
-const UserList = () => {
-  const { isLoading, error } = useUsers();
-  const users = useRecoilValue(filteredUsersState);
-
-  if (error) return <ErrorCard />;
-
-  if (isLoading) return <SkeletonList />;
-
-  return (
-    <SimpleGrid cols={{ base: 1, xs: 2 }} spacing="xl" w="100%">
-      {users.map((user) => (
-        <UserCard key={user.email} {...user} />
-      ))}
-    </SimpleGrid>
-  );
+type UserListProps = {
+  users: UserType[];
 };
 
-export default UserList;
+const UserList = ({ users }: UserListProps) => (
+  <SimpleGrid cols={{ base: 1, xs: 2 }} spacing="xl" w="100%">
+    {users.map((user) => (
+      <UserCard key={user.email} {...user} />
+    ))}
+  </SimpleGrid>
+);
+
+export default withEnhancers(UserList);
