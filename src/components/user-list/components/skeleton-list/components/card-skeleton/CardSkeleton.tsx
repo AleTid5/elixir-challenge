@@ -2,10 +2,10 @@ import { Box, Card, Flex, Group, Skeleton, Text } from "@mantine/core";
 
 const CardSkeleton = () => (
   <Card shadow="md" padding="lg" radius="md" withBorder>
-    <Skeleton height="1rem" radius="xl" mt="xs" />
+    <Skeleton height="0.75rem" radius="xl" mt="xs" />
     <Skeleton height="0.5rem" radius="xl" mt="0.75rem" />
     <Group my="xl" gap="sm" grow>
-      <Skeleton height={96} maw={96} circle />
+      <Skeleton height={86} maw={86} circle />
       <Flex gap="xs" direction="column">
         <Box>
           <Text size="xs" fw={500}>

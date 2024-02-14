@@ -4,7 +4,7 @@ import UserType from "@/types/user-type.ts";
 const UserCard = ({ name, email, image, age, country }: UserType) => {
   return (
     <Card shadow="md" padding="lg" radius="md" withBorder>
-      <Text size="xl" fw={700}>
+      <Text size="lg" fw={700}>
         {name}
       </Text>
       <Text size="xs" fw={100} c="dark">
@@ -15,8 +15,8 @@ const UserCard = ({ name, email, image, age, country }: UserType) => {
         <Image
           radius="100%"
           src={image}
-          height={96}
-          maw={96}
+          height={86}
+          maw={86}
           alt="Norway"
           loading="lazy"
           decoding="async"
