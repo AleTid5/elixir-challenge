@@ -17,7 +17,6 @@ const citizenships = [
   {
     group: "Europe",
     items: [
-      { value: "CH", label: "Chinese" },
       { value: "DE", label: "German" },
       { value: "DK", label: "Danish" },
       { value: "ES", label: "Spanish" },
@@ -25,13 +24,19 @@ const citizenships = [
       { value: "FR", label: "French" },
       { value: "GB", label: "British" },
       { value: "IE", label: "Irish" },
-      { value: "IN", label: "Indian" },
-      { value: "IR", label: "Iranian" },
       { value: "NL", label: "Dutch" },
       { value: "NO", label: "Norwegian" },
       { value: "RS", label: "Serbian" },
-      { value: "TR", label: "Turkish" },
       { value: "UA", label: "Ukrainian" },
+    ],
+  },
+  {
+    group: "Asia",
+    items: [
+      { value: "CH", label: "Chinese" },
+      { value: "IN", label: "Indian" },
+      { value: "IR", label: "Iranian" },
+      { value: "TR", label: "Turkish" },
     ],
   },
 ];
