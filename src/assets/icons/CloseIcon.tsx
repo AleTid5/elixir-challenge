@@ -4,7 +4,7 @@ type IconProps = CloseIconProps & {
   isVisible: boolean;
 };
 
-const CloseIcon = (props: IconProps) => (
+const CloseIcon = ({ isVisible, ...props }: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="20px"
@@ -13,7 +13,7 @@ const CloseIcon = (props: IconProps) => (
     fill="none"
     onClick={props.onClick}
     style={{
-      display: props.isVisible ? undefined : "none",
+      display: isVisible ? undefined : "none",
       cursor: "pointer",
     }}
     {...props}
