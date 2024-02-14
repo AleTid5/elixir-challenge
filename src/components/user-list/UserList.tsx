@@ -1,18 +1,17 @@
 import { useState } from "react";
+import { useRecoilValue } from "recoil";
 import { Modal, SimpleGrid } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
+import { filteredUsersState } from "@/stores/filters-store";
 import type UserType from "@/types/user-type.ts";
 import UserCard from "./components/user-card";
 import withEnhancers from "./wrappers/with-enhancers";
 import UserDetails from "./components/user-details";
 
-type UserListProps = {
-  users: UserType[];
-};
-
-const UserList = ({ users }: UserListProps) => {
+const UserList = () => {
   const [opened, { open, close }] = useDisclosure(false);
   const [user, setUser] = useState<UserType | null>(null);
+  const users = useRecoilValue(filteredUsersState);
 
   const onSeeMore = (index: number) => {
     setUser(users[index]);
