@@ -59,6 +59,7 @@ const AppSidebar = () => {
         nothingFoundMessage="The nationality was not found"
         comboboxProps={{ position: "right" }}
         onChange={onCountriesChange}
+        onBlur={() => refetch()}
       />
       <Button variant="filled" color="black" onClick={() => refetch()}>
         Apply filters
