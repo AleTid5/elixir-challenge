@@ -2,6 +2,7 @@ import type { ChangeEvent } from "react";
 import { useRecoilState } from "recoil";
 import { Button, em, Flex, Input, MultiSelect, Text } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
+import CloseIcon from "@/assets/icons/CloseIcon.tsx";
 import { useUsers } from "@/api/users";
 import citizenships from "@/constants/citizenships.ts";
 import {
@@ -12,7 +13,7 @@ import {
 const AppSidebar = () => {
   const { refetch } = useUsers();
   const isMobile = useMediaQuery(`(max-width: ${em(750)})`);
-  const [, setNameFilter] = useRecoilState(nameFilterState);
+  const [nameFilter, setNameFilter] = useRecoilState(nameFilterState);
   const [, setSelectedCountries] = useRecoilState(selectedCountriesState);
 
   const onChangeName = (event: ChangeEvent<HTMLInputElement>) =>
@@ -36,7 +37,21 @@ const AppSidebar = () => {
       <Text size="xl" fw={900}>
         Search
       </Text>
-      <Input radius="md" placeholder="Search user" onChange={onChangeName} />
+      <Input
+        radius="md"
+        placeholder="Search user"
+        value={nameFilter}
+        onChange={onChangeName}
+        rightSectionPointerEvents="all"
+        rightSection={
+          <CloseIcon
+            aria-label="Clear input"
+            role="button"
+            onClick={() => setNameFilter("")}
+            isVisible={nameFilter.length > 0}
+          />
+        }
+      />
       <MultiSelect
         placeholder="Choose the nationality"
         data={citizenships}

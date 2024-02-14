@@ -1,7 +1,10 @@
 import { Box, Button, Card, Flex, Group, Image, Text } from "@mantine/core";
 import UserType from "@/types/user-type.ts";
+import useUserCard from "./useUserCard.ts";
 
 const UserCard = ({ name, email, image, age, country }: UserType) => {
+  const { imageSize } = useUserCard();
+
   return (
     <Card shadow="md" padding="lg" radius="md" withBorder>
       <Text size="lg" fw={700}>
@@ -14,10 +17,10 @@ const UserCard = ({ name, email, image, age, country }: UserType) => {
       <Group my="xl" gap="sm" grow>
         <Image
           radius="100%"
+          alt="Image of the user"
           src={image}
-          height={86}
-          maw={86}
-          alt="Norway"
+          height={imageSize}
+          maw={imageSize}
           loading="lazy"
           decoding="async"
         />
