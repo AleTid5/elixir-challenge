@@ -2,16 +2,24 @@ import type { ChangeEvent } from "react";
 import { useRecoilState } from "recoil";
 import { Button, em, Flex, Input, MultiSelect, Text } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
+import { useUsers } from "@/api/users";
 import citizenships from "@/constants/citizenships.ts";
-import { nameFilterState } from "@/stores/filters-store";
+import {
+  nameFilterState,
+  selectedCountriesState,
+} from "@/stores/filters-store";
 
 const AppSidebar = () => {
+  const { refetch } = useUsers();
   const isMobile = useMediaQuery(`(max-width: ${em(750)})`);
   const [, setNameFilter] = useRecoilState(nameFilterState);
+  const [, setSelectedCountries] = useRecoilState(selectedCountriesState);
 
-  const onChangeName = (event: ChangeEvent<HTMLInputElement>) => {
+  const onChangeName = (event: ChangeEvent<HTMLInputElement>) =>
     setNameFilter(event.target.value);
-  };
+
+  const onCountriesChange = (countries: string[]) =>
+    setSelectedCountries(countries);
 
   return (
     <Flex
@@ -35,8 +43,9 @@ const AppSidebar = () => {
         searchable
         nothingFoundMessage="The nationality was not found"
         comboboxProps={{ position: "right" }}
+        onChange={onCountriesChange}
       />
-      <Button variant="filled" color="black">
+      <Button variant="filled" color="black" onClick={() => refetch()}>
         Apply filters
       </Button>
     </Flex>

@@ -9,7 +9,7 @@ export const nameFilterState = atom({
 
 export const selectedCountriesState = atom({
   key: SELECTED_COUNTRIES,
-  default: [],
+  default: [] as string[],
 });
 
 export const usersState = atom({
