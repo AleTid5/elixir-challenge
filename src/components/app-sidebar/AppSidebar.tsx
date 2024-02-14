@@ -57,7 +57,7 @@ const AppSidebar = () => {
         data={citizenships}
         searchable
         nothingFoundMessage="The nationality was not found"
-        comboboxProps={{ position: "right" }}
+        comboboxProps={{ position: isMobile ? "bottom" : "right" }}
         onChange={onCountriesChange}
         onBlur={() => refetch()}
       />
