@@ -10,7 +10,7 @@ const AppSidebar = () => {
       miw="15rem"
       pos="sticky"
       top="0"
-      py="2rem"
+      py={isMobile ? "2rem" : "0"}
       direction="column"
       gap="1rem"
       bg="white"
