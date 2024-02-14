@@ -8,4 +8,6 @@ export const transformDataIntoUsers = (data: UserResponse): UserType[] =>
     image: user.picture.large,
     country: user.location.country,
     age: user.dob.age,
+    phoneNumber: user.phone,
+    gender: user.gender,
   }));

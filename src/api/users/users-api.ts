@@ -8,7 +8,11 @@ import { transformDataIntoUsers } from "./helpers.ts";
 import { UserResponse } from "./types.ts";
 
 const fetchUsers = async (countries: string[]): Promise<UserType[]> => {
-  const url = urlBuilder(BASE_URL, { results: "20", nat: countries.join(",") });
+  const url = urlBuilder(BASE_URL, {
+    results: "20",
+    nat: countries.join(","),
+    noinfo: "",
+  });
   const res = await fetch(url);
 
   if (!res.ok) {

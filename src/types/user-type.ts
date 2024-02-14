@@ -4,6 +4,8 @@ type UserType = {
   image: string;
   country: string;
   age: number;
+  phoneNumber: string;
+  gender: string;
 };
 
 export default UserType;

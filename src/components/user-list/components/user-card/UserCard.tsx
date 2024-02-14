@@ -2,7 +2,18 @@ import { Box, Button, Card, Flex, Group, Image, Text } from "@mantine/core";
 import UserType from "@/types/user-type.ts";
 import useUserCard from "./useUserCard.ts";
 
-const UserCard = ({ name, email, image, age, country }: UserType) => {
+type UserCardProps = UserType & {
+  onSeeMore: () => void;
+};
+
+const UserCard = ({
+  name,
+  email,
+  image,
+  age,
+  country,
+  onSeeMore,
+}: UserCardProps) => {
   const { imageSize } = useUserCard();
 
   return (
@@ -46,7 +57,13 @@ const UserCard = ({ name, email, image, age, country }: UserType) => {
         </Flex>
       </Group>
 
-      <Button color="black" variant="outline" fullWidth radius="md">
+      <Button
+        color="black"
+        variant="outline"
+        fullWidth
+        radius="md"
+        onClick={onSeeMore}
+      >
         See more info
       </Button>
     </Card>
