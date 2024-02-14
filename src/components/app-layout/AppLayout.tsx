@@ -1,10 +1,18 @@
 import type { PropsWithChildren } from "react";
-import { Container, Flex } from "@mantine/core";
+import { Container, em, Flex } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 
 const AppLayout = ({ children }: PropsWithChildren) => {
+  const isMobile = useMediaQuery(`(max-width: ${em(750)})`);
+
   return (
-    <Container py="xl">
-      <Flex gap="xl" justify="center" align="flex-start" direction="row">
+    <Container py={isMobile ? "0" : "xl"}>
+      <Flex
+        gap="xl"
+        justify="center"
+        align="flex-start"
+        direction={isMobile ? "column" : "row"}
+      >
         {children}
       </Flex>
     </Container>

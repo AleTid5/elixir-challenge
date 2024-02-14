@@ -4,16 +4,16 @@ import UserCard from "./components/user-card";
 const UserList = () => {
   return (
     <Grid>
-      <Grid.Col span={{ base: 12, sm: 6 }}>
+      <Grid.Col span={{ base: 12, xs: 6 }}>
         <UserCard />
       </Grid.Col>
-      <Grid.Col span={{ base: 12, sm: 6 }}>
+      <Grid.Col span={{ base: 12, xs: 6 }}>
         <UserCard />
       </Grid.Col>
-      <Grid.Col span={{ base: 12, sm: 6 }}>
+      <Grid.Col span={{ base: 12, xs: 6 }}>
         <UserCard />
       </Grid.Col>
-      <Grid.Col span={{ base: 12, sm: 6 }}>
+      <Grid.Col span={{ base: 12, xs: 6 }}>
         <UserCard />
       </Grid.Col>
     </Grid>

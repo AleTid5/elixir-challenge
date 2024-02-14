@@ -1,9 +1,22 @@
-import { Button, Flex, Input, MultiSelect, Text } from "@mantine/core";
+import { Button, em, Flex, Input, MultiSelect, Text } from "@mantine/core";
 import citizenships from "@/constants/citizenships.ts";
+import { useMediaQuery } from "@mantine/hooks";
 
 const AppSidebar = () => {
+  const isMobile = useMediaQuery(`(max-width: ${em(750)})`);
+
   return (
-    <Flex miw="15rem" pos="sticky" top="2rem" direction="column" gap="1rem">
+    <Flex
+      miw="15rem"
+      pos="sticky"
+      top="0"
+      py="2rem"
+      direction="column"
+      gap="1rem"
+      bg="white"
+      w={isMobile ? "100%" : "auto"}
+      style={{ zIndex: "1" }}
+    >
       <Text size="xl" fw={900}>
         Search
       </Text>
