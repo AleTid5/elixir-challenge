@@ -1,19 +1,20 @@
 import { Box, Button, Card, Flex, Group, Image, Text } from "@mantine/core";
+import UserType from "@/types/user-type.ts";
 
-const UserCard = () => {
+const UserCard = ({ name, email, image, age, country }: UserType) => {
   return (
     <Card shadow="md" padding="lg" radius="md" withBorder>
       <Text size="xl" fw={700}>
-        John Cassidy
+        {name}
       </Text>
       <Text size="xs" fw={100} c="dark">
-        john.cassidy@gmail.com
+        {email}
       </Text>
 
       <Group my="xl" gap="sm" grow>
         <Image
           radius="100%"
-          src="https://randomuser.me/api/portraits/men/75.jpg"
+          src={image}
           height={96}
           maw={96}
           alt="Norway"
@@ -27,7 +28,7 @@ const UserCard = () => {
               Country
             </Text>
             <Text size="xs" fw={100}>
-              United States
+              {country}
             </Text>
           </Box>
 
@@ -36,7 +37,7 @@ const UserCard = () => {
               Age
             </Text>
             <Text size="xs" fw={100}>
-              30 years old
+              {age}
             </Text>
           </Box>
         </Flex>

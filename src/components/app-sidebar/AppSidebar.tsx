@@ -9,8 +9,8 @@ const AppSidebar = () => {
     <Flex
       miw="15rem"
       pos="sticky"
-      top="0"
-      py={isMobile ? "2rem" : "0"}
+      top={isMobile ? "0" : "2rem"}
+      py="2rem"
       direction="column"
       gap="1rem"
       bg="white"
